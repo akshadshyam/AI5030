@@ -1,0 +1,90 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{\textbf{Assignment1}}
+\author{Akshad Shyam}
+\date{March 10 2022}
+
+\begin{document}
+
+\maketitle
+
+\textbf{Q.104 DEC 2017} Let S be a set of all 3X3 matrices having entries equal to 1 and 6 entries equal to 0. A matrix M is picked uniformly at random from set S. Then\\
+1.) P(M is non-singular) = 1/14 \\
+2.) P(M has rank 1) = 1/14 \\
+3.) P(M is identity) = 1/14 \\
+4.) P(trace(M)=0) = 1/14 \\
+
+Answer: Option 1 and Option 2 are correct\\
+
+\section{Definitions}
+\subsection{Non-singular matrix}
+Non singular matrix is a square matrix whose determinant is a non-zero value.
+\begin{equation}
+    |A| \ne 0
+\end{equation}
+A nxn matrix A is called non-singular or an invertible matrix if there exists an nxn matrix B such that
+\begin{equation}
+    AB = BA = I
+\end{equation}
+\subsection{Rank of a Matrix}
+The maximum number of linearly independent columns(or rows) of a matrix is called the rank of a matrix.
+\subsection{Identity Matrix}
+An Identity matrix is a nxn square matrix whose principal diagonal elements are ones, and all other elements are zeros.By multiplying any matrix by the identity matrix we get the matrix itself. Hence this is also called a unit matrix.
+\subsection{Trace of a matrix}
+The trace of a matrix is the sum of its principal diagonal elements. \\
+Let A be a nxn square matrix. Then\\
+\begin{equation}
+    Trace(A) = \sum_{k=0}^{n} A_{kk}
+\end{equation}
+
+\section{Solution}
+The number of elements in the set of such matrices with 3 ones and 6 zeros would be 
+\begin{equation}
+    S = {}^{9}C_{3}
+\end{equation}
+\subsection{Checking Option 1}
+For a matrix in the set to be non-singular all its columns have to be linearly independent. For example
+\[
+  A_{3\times3} =
+  \left[ {\begin{array}{ccc}
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & 1
+  \end{array} } \right]
+\]
+
+Now three such linearly independent columns can be arranged in 3! ways.
+\[P(M \hspace{0.1cm} is \hspace{0.1cm} non-singular) = 3!/{}^{9}C_{3} = 6/84 = 1/14 \] 
+Option 1 is correct
+
+\subsection{Checking option 2}
+For a 3X3 matrix to have a rank of 1 means it only has one column(or row) which is linearly independent from the other columns(or rows)\\
+In this set the only matrices satisfying this is when all ones are in the same column(or row)\\
+Example\\
+\[
+  A_{3\times3} =
+  \left[ {\begin{array}{ccc}
+    1 & 0 & 0 \\
+    1 & 0 & 0 \\
+    1 & 0 & 0
+  \end{array} } \right]
+\]
+Similarly for the other two columns and three rows. A total of six matrices satisfy this condition.
+\[P(M \hspace{0.1cm} has\hspace{0.1cm} rank \hspace{0.1cm} 1) = 6/{}^{9}C_{3} = 6/84 = 1/14 \]\\
+Hence option 2 is correct
+
+\subsection{Checking option 3}
+For a matrix to be an identity matrix all its principal diagonal elements need to be ones and rest all have to be zero.
+In this set only one matrix will satisfy this condition. 
+\[P(M \hspace{0.1cm} is \hspace{0.1cm}Identity) = 1/{}^{9}C_{3} = 1/84 \]\\
+Hence option 3 is wrong
+
+
+\subsection{Checking option 4}
+The trace of a matrix is the sum of its principal diagonal elements.\\
+In this set for the sum of diagonal elements to be zero, all elements in the diagonal have to be zero.\\
+All the ones have to be occupied within the six remaining positions.\\
+\[P(Trace(M)=0) = {}^{6}C_{3}/{}^{9}C_{3} = 20/84 \]
+Hence option 4 is wrong
+\end{document}
